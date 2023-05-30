@@ -21,12 +21,11 @@ app.use('/', indexRouter);
 app.use('/user', userRouter);
 
 // connect to the database
-const { default: mongoose } = require("mongoose");
-const Mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-const DATABASE_URL = "mongodb://localhost/lane-db"
+const DATABASE_URL = "mongodb://0.0.0.0/db-server"
 mongoose.connect(DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
-//mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongDB connection error:"));
 
