@@ -28,11 +28,11 @@ db.sequelize.sync({ force: true }).then(() => {
 // app.set('vew options', {pretty: true});
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to lane_db application"});
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to lane_db application"});
+// });
 // router tables
-// const indexRouter = require("./app/routes/index");
+const indexRouter = require("./app/routes/index");
 // const userRouter = require("./app/routes/user");
 // app.use("/", indexRouter);
 // app.use("/user", userRouter);
