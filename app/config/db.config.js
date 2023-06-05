@@ -1,5 +1,6 @@
 module.exports = {
     HOST: "localhost",
+    PORT: 3389,
     USER: "root",
     PASSWORD: "Wmozart",
     DB: "lane_db",

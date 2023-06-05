@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
 // load the db models and sync
+const mysql = require("mysql");
 const db = require("./app/models");
 //TODO when in production, drop the sync arguments
 db.sequelize.sync({ force: true }).then(() => {
