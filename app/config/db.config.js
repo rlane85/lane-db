@@ -1,8 +1,8 @@
 module.exports = {
     HOST: "localhost",
-    PORT: 3389,
+    PORT: 3306,
     USER: "root",
-    PASSWORD: "Wmozart",
+    PASSWORD: "Password123!@#",
     DB: "lane_db",
     dialect: "mysql",
     pool: {
