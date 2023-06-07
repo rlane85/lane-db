@@ -1,9 +1,9 @@
 const clientID = "clientID";
 const clientSecret = "clientSecret";
 exports.index = function(req, res, next) {
-    console.log(JSON.stringify(req));
-    const ID = req.auth.clientID;
-    const secret = req.auth.clientSecret;
+    //console.log(req);
+    const ID = req.query.username;
+    const secret = req.query.password;
     console.log("checking authentication", JSON.stringify(req.query));
     if (ID == clientID && secret == clientSecret) {
         res.json({token: "good"});

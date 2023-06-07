@@ -1,24 +1,31 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const bodyParser = require ('body-parser');
+const http = require ('http');
+
 var corsOptions = { origin:"http://localhost:8081"}
 
 const app= express();
 app.use(cors(corsOptions));
 
-// parse requests of content-type - applicaiton/json
-app.use(express.json());
-// parse requesets of content type - applicaiton/x-www-for-urlencoded
-app.use(express.urlencoded({ extended: true }));
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
+// parse requesets of content type - application/x-www-for-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
-
+// log every request to teh console
+const router = express.Router();
+router.use(function(req,res,next) {
+  console.log(req.method, req.url, req.auth);
+});
 // router tables
 const indexRouter = require("./app/routes/index");
 // const userRouter = require("./app/routes/user");
-// app.use("/", indexRouter);
+app.use("/", indexRouter);
 // app.use("/user", userRouter);
 
 // set up the listener
