@@ -12,7 +12,7 @@ const sequelize = new Sequelize (dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, 
     idle: dbConfig.pool.idle
   }
 });
-console.log(sequelize);
+//console.log(sequelize);
 
 const db = {};
 
