@@ -38,8 +38,6 @@ app.use("/", indexRouter);
 // set up the listener
 
 const port = process.env.PORT || 8080
-console.log(process.env.PORT)
-console.log(port, "port")
 app.listen(port, () => {
   console.log(`server is running on port ${port}.`);
 });
