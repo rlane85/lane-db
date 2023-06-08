@@ -1,8 +1,8 @@
 module.exports = {
     HOST: "localhost",
     PORT: 3306,
-    USER: "root",
-    PASSWORD: "Password123!@#",
+    USER: "jwt",
+    PASSWORD: process.env.MYSQL_PASS,
     DB: "lane_db",
     dialect: "mysql",
     pool: {
