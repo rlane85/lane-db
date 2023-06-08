@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const bodyParser = require ('body-parser');
-const http = require ('http');
 
 //reading env variables for local dev
 require('dotenv').config();
@@ -44,7 +43,6 @@ app.listen(port, () => {
 
 // load the db models and sync
 
-//const mysql = require("mysql");
 const db = require("./app/models/_index");
 //TODO when in production, drop the sync arguments
 db.sequelize.sync ({ force: true }).then(() => {
